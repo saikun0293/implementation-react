@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header') %>
+</head>
+
+<body>
+    
+
+
+
+<div class="loginbox">
+    <div class="authlinks">
+        <div class="login"><a href="/login">Login</a></div>
+        <div class="register"><a href="/register">Register</a></div>
+
+    </div>
+
+<div class="logininput">
+    <form action="/login" method="POST">
+      <div class="inputbox">
+          <% if (messages.error) { %>
+            <p id="errormessage">
+
+            <%= messages.error %>
+          </p>
+
+                <% } %>
+      </div>
+
+      <div class="inputbox">
+        <% if (errors) { %>
+          <% if(errors[0].msg !== null) { %>
+            <p id="warningmessage">
+            <%= errors[0].msg %>
+        </p>
+
+        <% }  } %>
+    </div>
+
+      <div class="inputbox">
+        <div id="email"><label for="email">Email/Username</label></div>
+        <div id="email"><input type="text" id="email" name="email" required></div>
+      </div>
+      <div class="inputbox">
+        <div id="email"><label for="password">Password</label></div>
+        <div id="email"><input type="password" id="password" name="password" required></div>
+      </div>
+      <div class="inputbox">
+      <button class="submitbutton" type="submit">Login</button></div>
+    </form>
+</div>
+<a id="forgot" href="/reset-password">Forgot Password?</a>
+
+</div>
+
+</body>
+</html>

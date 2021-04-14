@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/header') %>
+  </head>
+
+  <body>
+    <%- include('../partials/canvasnav') %>
+    <%- include('../partials/accountnav') %>
+    <%- include('../partials/inputboxes') %>
+    <%- include('../partials/userforms') %>
+
+
+
+
+  </body>
+
+
+
+  <% if (loadedFile) { %>
+    <script src="/app.js"></script>
+    <script>
+      // console.log(<%- loadedFile %>)
+      // import { loadDoc } from '/app.js'; // Or it could be simply `hello.js`
+      let capture = <%- loadedFile %>
+      loadDoc(<%- loadedFile %>);
+    </script>
+<% } %>
+  <!-- <script src="../../node_modules/"></script> -->
+</html>

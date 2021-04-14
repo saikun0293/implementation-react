@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/header') %>
+  </head>
+
+  <body>
+    <%- include('../partials/accountnav') %>
+      <h2 class="title">My Dots</h2>
+      <div class="thumbcontainer">
+          <ul class="userdocs">
+            <div class="dotboxes">
+            <a class="dotname" href="/newDots"><li>New</li></a>
+          </div>
+
+          </ul>
+            <ul class="userdocs">
+              <% for (var i = 0; i < userfiles.length ; i++) { %>
+                <div class="dotboxes">
+                  <a class="dotname" href="/loadDots/<%= userfiles[i] %>"><li> <%= userfiles[i] %></li> </a>
+                </div>
+              <% } %>
+                
+
+                </ul>
+      </div>
+  </body>

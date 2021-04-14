@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <%- include('../partials/header') %>
+
+</head>
+
+<body>
+    <h1>Register</h1>
+    <% if (messages) { %>
+        <%= messages %>
+        <% } %>
+    <form action="/register" method="POST">
+      <div>
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <a href="/login">Login</a>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header') %>
+</head>
+
+<body>
+    
+
+
+
+<div class="loginbox">
+    <div class="authlinks">
+        <div class="login"><a href="/login">Login</a></div>
+        <div class="register"><a href="/register">Register</a></div>
+
+    </div>
+
+<div class="logininput">
+    <form action="/register" method="POST">
+        <div class="inputbox">
+            <% if (errors) { %>
+              <% if(errors[0].msg !== null) { %>
+                <p id="errormessage">
+                <%= errors[0].msg %>
+            </p>
+
+            <% }  } %>
+        </div>
+
+        <div class="inputbox">
+            <div id="field"><label for="name">Username</label></div>
+            <div id="field"><input type="text" id="name" name="name" placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>" required></div>
+          </div>
+      <div class="inputbox">
+        <div id="field">
+        <label for="email">Email</label></div>
+        <div id="field"><input type="email" id="email" name="email" placeholder="Enter Email"
+        value="<%= typeof email != 'undefined' ? email : '' %>" required></div>
+      </div>
+      <div class="inputbox">
+        <div id="field"><label for="password">Password</label></div>
+        <div id="field"><input type="password" id="password" name="password" placeholder="Enter Password"
+        value="<%= typeof password != 'undefined' ? password : '' %>" required></div>
+      </div>
+
+      <div class="inputbox">
+        <div id="field"><label for="password">Confirm Password</label></div>
+        <div id="field"><input type="password" id="password" name="password2" placeholder="Enter Password Again"
+        value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required></div>
+      </div>
+      <div class="inputbox">
+      <button class="submitbutton" type="submit">Register</button></div>
+    </form>
+</div>
+<a id="forgot" href="/reset-password">Forgot Password?</a>
+
+</div>
+
+</body>
+</html>
+
+
+

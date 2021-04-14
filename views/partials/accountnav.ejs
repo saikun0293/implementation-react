@@ -1,0 +1,58 @@
+<div class="accountbar">
+    
+    <div class="right">
+      <% if (typeof loggedInUser == 'undefined') { %>
+
+
+    <div class="canvasbuttons is-logged-in" id="username">
+      <% } else { %>
+        <div class="canvasbuttons is-logged-in activated" id="username">
+          <span id="display-name"><%= loggedInUser %></span>
+      <% } %>
+        <span class="badge">3</span>
+        <ul class="dialog notifs">
+            <div class="container">
+                <a href="#">
+                     <li>
+                        @mike invited you to collaborate
+                </li>
+                </a>
+            </div>
+        <div class="container">
+            <a href="#">
+            <li>
+                        @lina submitted to your dots
+                </li>
+            </a>
+        </div>
+            <li id="last">
+                    <a href="#">See all </a>
+            </li>
+
+        </ul>
+    </div>
+        
+
+      <div class="canvasbuttons"><a  href="/Mydots"><p class="submitbutton">My Dots</p></a></div>
+
+
+      <div class="canvasbuttons">
+        <form action="/logout?_method=DELETE" method="POST">
+        <button class="submitbutton" type="submit">Log Out</button></form>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script>
+    $(".badge").add("#username").on('click', function(){
+    $(".notifs").toggleClass('activated')
+}).blur(function(){
+    console.log('glgl');
+    $(".notifs").removeClass('activated')
+})
+  </script>
+
+

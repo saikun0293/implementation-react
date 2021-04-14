@@ -1,0 +1,35 @@
+.background {
+  fill: #ecf0eb;
+  stroke: #b5b2b1;
+  stroke-width: 4px;
+}
+
+.boxNotDragging {
+  opacity: 0.5;
+}
+
+.box rect {
+  fill: #d7dbd9;
+  stroke: #d44e55;
+  stroke-width: 2px;
+}
+
+.box text {
+  font: 14px arial;
+}
+
+.node rect {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}

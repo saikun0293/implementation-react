@@ -1,0 +1,11 @@
+
+<% if (errors) { %>
+  <% if(errors[0].msg !== null) { %>
+    <h2 >
+    <%= errors[0].msg %>
+    </h2>
+
+<% }  } else { %>
+  <% var errors = 'No message' %>
+  <h2><%= errors%> </h2>
+  <% } %>
